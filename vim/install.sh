@@ -12,3 +12,14 @@ for f in "${FILES[@]}"; do
 	test -f "~/$f" && test ! -L "~/$f" && mv -v ~/$f ~/$f.old
 	ln -sfv $CUR_DIR/$f ~/
 done
+
+BUNDLE_DIR=.vim/bundle
+
+# Compile YouCompleteMe
+git clone https://github.com/Valloric/YouCompleteMe.git "$BUNDLE_DIR/YouCompleteMe"
+cd "$BUNDLE_DIR/YouCompleteMe" && ./install.sh --clang-completer
+
+# Install bundles
+vim +PluginInstall +qall
+
+cd $CUR_DIR
