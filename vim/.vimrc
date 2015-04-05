@@ -1,2 +1,2 @@
-source ~/.vim/startup/bundles.vim
+source ~/.vim/startup/vundle.vim
 source ~/.vim/startup/mappings.vim

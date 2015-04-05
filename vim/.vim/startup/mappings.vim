@@ -23,8 +23,8 @@ nmap ] ]zz
 nmap ) )zz
 
 " abbreviations
-iabbr @author Ivan Jurin
-iabbr @email nirujnavi@gmail.com
+iabbr author Ivan Jurin
+iabbr email nirujnavi@gmail.com
 
 " quik pairs
 imap <leader>' ''<ESC>i
