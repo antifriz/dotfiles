@@ -1,6 +1,6 @@
 
 # list entering directory
-function cd() { builtin cd "$@" && ls --color -hlt --group-directories-first | head -n 10; }
+function cd() { builtin cd "$@" && ls --color -hlt --group-directories-first | head -q -n 10; }
 
 
 # Extract many types of compress files
@@ -11,6 +11,7 @@ extract() {
         case "$1" in
             *.tar.bz2)  tar -jxvf "$1"                        ;;
             *.tar.gz)   tar -zxvf "$1"                        ;;
+            *.tar.xz)   tar xf "$1"                           ;;
             *.bz2)      bunzip2 "$1"                          ;;
             *.dmg)      hdiutil mount "$1"                    ;;
             *.gz)       gunzip "$1"                           ;;
