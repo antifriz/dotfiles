@@ -13,11 +13,13 @@ for f in "${FILES[@]}"; do
 	ln -sfv $CUR_DIR/$f ~/
 done
 
+exit 0
+
 BUNDLE_DIR=.vim/bundle
 
 # Compile YouCompleteMe
 git clone https://github.com/Valloric/YouCompleteMe.git "$BUNDLE_DIR/YouCompleteMe"
-cd "$BUNDLE_DIR/YouCompleteMe" && ./install.sh --clang-completer
+cd "$BUNDLE_DIR/YouCompleteMe" && ./install.sh --clang-completer --omnisharp-completer
 
 # Install bundles
 vim +PluginInstall +qall

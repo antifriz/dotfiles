@@ -1,0 +1,43 @@
+# Prepend new items to path (if directory exists)
+
+prependPATH() {
+    [ -d $1 ] && PATH="$1:${PATH}"
+}
+
+prependMANPATH() {
+    [ -d $1 ] && MANPATH="$1:${MANPATH}"
+}
+
+prependINFOPATH() {
+    [ -d $1 ] && INFOPATH="$1:${INFOPATH}"
+}
+
+prependPATH "/bin"
+prependPATH "/usr/bin"
+prependPATH "/usr/local/bin"
+prependPATH "$DOTFILES_DIR/bin"
+
+# Remove duplicates (preserving prepended items)
+# Source: http://unix.stackexchange.com/a/40755
+
+PATH=`echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}'`
+
+export PATH
+
+#==============================================================================
+# Program specific
+#==============================================================================
+
+# linuxbrew
+
+prependPATH "$HOME/.linuxbrew/bin"
+prependMANPATH "$HOME/.linuxbrew/share/man"
+prependINFOPATH "$HOME/.linuxbrew/share/info"
+
+#==============================================================================
+# Wrap up
+#==============================================================================
+
+unset prependPATH
+unset prependMANPATH
+unset prependINFOPATH

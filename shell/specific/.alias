@@ -1,0 +1,62 @@
+# Shortcuts
+
+alias _="sudo"
+alias g="git"
+alias v="vim"
+alias rr="rm -rf"
+
+# ls
+
+LS_COLORS="--color -G"
+LS_TIMESTYLEISO="--time-style=long-iso"
+LS_GROUPDIRSFIRST="--group-directories-first"
+
+alias l="ls -lahA ${LS_COLORS} ${LS_TIMESTYLEISO} ${LS_GROUPDIRSFIRST}"
+alias la="ls -lA ${LS_COLORS}"
+alias lt="ls -lhAtr ${LS_COLORS} ${LS_TIMESTYLEISO} ${LS_GROUPDIRSFIRST}"
+alias ld="ls -ld ${LS_COLORS} */"
+
+unset LS_COLORS LS_TIMESTYLEISO LS_GROUPDIRSFIRST
+
+
+# cd
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias -- -="cd -"
+alias ~="cd --"
+
+# tree
+
+alias treed="tree -d"
+alias tree1="tree -d -L 1"
+alias tree2="tree -d -L 2"
+alias tree2="tree -d -L 3"
+
+# apt-get
+
+alias sapt="sudo apt-get"
+alias sapti="sudo apt-get install"
+alias saptir="sudo apt-get install --reinstall"
+alias saptr="sudo apt-get remove"
+alias saptp="sudo apt-get purge"
+
+# Network
+
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ipl="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+
+# Speed Test
+
+alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
+
+# It's probably me
+
+#alias quit="exit"
+
+# xclip
+
+alias xclip="xclip -selection c"
