@@ -5,6 +5,7 @@ CUR_DIR=$(pwd)
 DIRS=(
 	vim
 	shell
+	terminator
 )
 
 for d in $DIRS; do
